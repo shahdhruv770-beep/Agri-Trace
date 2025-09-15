@@ -1,0 +1,163 @@
+1. General Requirements
+
+Responsive design (mobile + desktop).
+
+Role-based dashboards (Farmer, Distributor, Retailer, Buyer, Admin).
+
+Navigation bar with role-based menu + icons.
+
+Login / Register / Forgot Password pages with farm background images (like wheat fields / green farms).
+
+JWT authentication integration.
+
+Dark + Light mode toggle with smooth transitions.
+
+
+
+---
+
+🌾 2. Farmer Dashboard
+
+Hero Section Background → full-width farm image with transparent cards.
+
+Add Crop Form → crop name, type, quantity, price, harvest date, upload photo.
+
+My Crops Page → card-based grid with crop images + status (Available / Sold).
+
+Payments Page → stylish table with icons (₹ symbol, success/fail).
+
+QR Generator → Each crop generates a modern QR code card with green background + download button.
+
+
+
+---
+
+🚚 3. Distributor Dashboard
+
+Available Crops Page → grid of farmer crops with images + “Buy” button.
+
+My Deliveries Page → timeline UI with truck icons, showing transport history.
+
+Transport Form → full-page card with road background image.
+
+Payments Page → modern card layout for transactions.
+
+Inventory → list with product images + stock count.
+
+
+
+---
+
+🛒 4. Retailer Dashboard
+
+Deliveries Page → table with green accent colors.
+
+Accept Delivery Button → styled with animation (tick/check effect).
+
+Retailer Stock Page → product cards with store shelf background image.
+
+Sales Tracking → bar chart for daily sales (Recharts/Chart.js).
+
+
+
+---
+
+👩‍👩‍👦 5. Buyer/Consumer Dashboard
+
+Scan QR Page → futuristic scanner design with glowing input box.
+
+Trace Result Page → show step-by-step timeline with icons & images:
+
+Farmer image & details.
+
+Distributor truck image & route.
+
+Retailer shop image.
+
+
+Feedback Form → card with soft shadow, emoji icons for rating.
+
+
+
+---
+
+🛠️ 6. Admin Dashboard
+
+Users Management Page → table with profile images + role tags.
+
+Analytics Dashboard → pie chart, line chart with farm-themed background (subtle transparent overlay).
+
+Payments Analytics → animated counters showing total transactions.
+
+Crops Overview → interactive map showing origin of crops.
+
+
+
+---
+
+💳 7. Payment UI
+
+Payment Modal → glassmorphism design (blurred background).
+
+Transaction History Table → green highlights for success, red for pending.
+
+Payment Status Messages → animated tick mark (success) / cross mark (fail).
+
+
+
+---
+
+📦 8. Extra Features
+
+Search & Filter → modern search bar with crop icons.
+
+Notifications Bell → dropdown notifications with green highlights.
+
+Profile Page → profile card with circular user photo.
+
+Language Toggle → English/Hindi mix option.
+
+Dark Mode Charts → glowing neon charts in dark theme.
+
+
+
+---
+
+🎨 9. UI/UX Style
+
+Use Background Images:
+
+Login/Register → farm fields.
+
+Farmer dashboard → farm + crop images.
+
+Distributor → road/truck theme.
+
+Retailer → shop background.
+
+Buyer → scanner theme with tech-style background.
+
+Admin → abstract farming/analytics background.
+
+
+TailwindCSS with modern gradients (green → yellow, earthy brown tones).
+
+Cards with rounded 2xl corners + soft shadows.
+
+Lucide-react icons for menu & buttons.
+
+Framer Motion animations for smooth transitions.
+
+
+
+---
+
+👉 Deliver final output as a React project with:
+
+components folder for UI (Navbar, Sidebar, Cards, Buttons).
+
+pages folder for dashboards (farmer, distributor, retailer, buyer, admin).
+
+services/api.js file for backend API calls.
+
+auth context for JWT handling

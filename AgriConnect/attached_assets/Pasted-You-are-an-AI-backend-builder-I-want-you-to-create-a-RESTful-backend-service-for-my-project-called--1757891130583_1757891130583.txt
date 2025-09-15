@@ -1,0 +1,122 @@
+You are an AI backend builder. I want you to create a RESTful backend service for my project called AgriTrace.
+
+The backend must support multiple user roles:
+
+Farmer (adds crops, receives payments)
+
+Distributor (buys from farmers, transports crops, sells to retailers)
+
+Retailer (receives from distributors, sells to buyers, pays distributors)
+
+Buyer/Consumer (scans QR code to trace crop journey)
+
+Admin (approves users, analytics)
+
+
+
+---
+
+1. Authentication & User Model
+
+Each user must register/login with id, name, role, email/phone, password.
+
+JWT-based authentication.
+
+Role-based access control (Farmer, Distributor, Retailer, Buyer, Admin).
+
+
+
+---
+
+2. Farmer APIs
+
+POST /crops → Farmer adds new crop (name, type, quantity, price, harvest date, photo).
+
+GET /crops/:farmerId → Get all crops for a farmer.
+
+GET /crops/available → Show all available crops (for distributors).
+
+Generate unique batch ID + QR code for each crop.
+
+
+
+---
+
+3. Distributor APIs
+
+POST /distributor/accept/:cropId → Accept crop from farmer.
+
+PUT /distributor/transport/:cropId → Add transport details (vehicle no, route, delivery date).
+
+POST /payments/farmer → Pay farmer & record transaction.
+
+
+
+---
+
+4. Retailer APIs
+
+GET /retailer/deliveries → Get deliveries assigned to retailer.
+
+POST /retailer/accept/:deliveryId → Accept delivery from distributor.
+
+POST /payments/distributor → Pay distributor & record transaction.
+
+GET /retailer/stock → Retailer stock listing for customers.
+
+
+
+---
+
+5. Buyer (Consumer) APIs
+
+GET /trace/:batchId → Trace product journey using QR code:
+
+Farmer details
+
+Distributor transport info
+
+Retailer info
+
+
+
+
+---
+
+6. Admin APIs
+
+GET /users → View all users.
+
+POST /users/approve/:id → Approve/reject registration.
+
+GET /analytics → Show total crops, total payments, pending deliveries.
+
+
+
+---
+
+7. Payment System
+
+Payments should be stored in a payments table with fields:
+
+id, amount, fromUserId, toUserId, cropId, paymentStatus, date.
+
+
+APIs:
+
+POST /payments → Create a payment record.
+
+GET /payments/:userId → Get user payment history.
+
+
+
+
+---
+
+8. Extra Features
+
+Add real-time notifications (optional).
+
+Add search crops by type/location.
+
+Add basic analytics APIs (total sales, total farmers, distributors, retailers).
